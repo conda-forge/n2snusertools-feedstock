@@ -1,17 +1,17 @@
 {% set name = "N2SNUserTools" %}
-{% set version = "0.3.7" %}
+{% set version = "0.3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5612f1d0c31c1bd0c4f0c493236610b988291800d07862d5e6427aa162964468
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: 683f388dec9ea18b2ef7e5dc1e236f88c4fa0e1ba39c323608c3591d786f9ffd
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - n2sn_add_user = N2SNUserTools.cli:n2sn_add_user
